@@ -1,132 +1,109 @@
-<?=
+<?php
 include("common/head_scripts.php");
 include("common/components.php");
+include("common/website_info.php");
 ?>
 
 <html>
 <?= head("Guest Signup"); ?>
 
-<body>
+<body class="signup">
   <?=
   toTopBtn();
   navbar()
   ?>
   <main>
     <div class="container">
-      <div class="jumbotron">
-        <center>
-          <h1>Hi Guest, <br> Welcome to <span style="color:gold;" class="edit"> Le Comscie' </span></h1>
-        </center>
-        <br>
-        <p>Get started by creating your account</p>
-      </div>
-    </div>
+      <header class="text-center">
+        <h1>Hi Guest</h1>
+        <h1>Welcome to <span class="website_name"> <?= $website_name ?> </span></h1>
+        <h4>Get started by creating your account.</h4>
+      </header>
 
+      <div class="col-md-5 mx-auto mt-5">
+        <div class="card">
+          <div class="card-header">Create Account</div>
 
-
-    <div class="container" style="margin-top: 4%; margin-bottom: 2%;">
-      <div class="col-md-5 col-md-offset-4">
-        <div class="panel panel-primary">
-          <div style="background-color:rgb(1, 1, 85);" class="panel-heading"> Create Account </div>
-          <div class="panel-body">
-
+          <div class="card-body">
             <form role="form" action="customer_registered_success.php" method="POST">
-
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-12">
-                  <label for="fullname"><span class="text-danger" style="margin-right: 5px;">*</span> Full Name: </label>
+                  <label for="username"><span class="text-danger">*</span> Full Name: </label>
                   <div class="input-group">
-                    <input class="form-control" id="fullname" type="text" name="fullname" placeholder="Your Full Name" required="" autofocus="">
-                    <span class="input-group-btn">
-                      <label style="background-color:rgb(1, 1, 85);" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
-                    </span>
+                    <span class="input-group-text bi-person-fill"></span>
+                    <input class="form-control" id="fullname" type="text" name="fullname" placeholder="Full Name" required="" autofocus="">
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-12">
-                  <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
+                  <label for="username"><span class="text-danger">*</span> Username: </label>
                   <div class="input-group">
-                    <input class="form-control" id="username" type="text" name="username" placeholder="Your Username" required="">
-                    <span class="input-group-btn">
-                      <label style="background-color:rgb(1, 1, 85);" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
-                    </span>
+                    <span class="input-group-text bi-person-fill"></span>
+                    <input class="form-control" id="username" type="text" name="username" placeholder="Username" required="">
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-12">
-                  <label for="email"><span class="text-danger" style="margin-right: 5px;">*</span> Email: </label>
+                  <label for="username"><span class="text-danger">*</span> Email: </label>
                   <div class="input-group">
+                    <span class="input-group-text bi-envelope-fill"></span>
                     <input class="form-control" id="email" type="email" name="email" placeholder="Email" required="">
-                    <span class="input-group-btn">
-                      <label style="background-color:rgb(1, 1, 85);" class="btn btn-primary"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></label>
-                    </span>
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-12">
-                  <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Contact: </label>
+                  <label for="password"><span class="text-danger">*</span> Contact: </label>
                   <div class="input-group">
+                    <span class="input-group-text bi-phone-fill"></span>
                     <input class="form-control" id="contact" type="text" name="contact" placeholder="Contact" required="">
-                    <span class="input-group-btn">
-                      <label style="background-color:rgb(1, 1, 85);" class="btn btn-primary"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></label>
-                    </span>
-
                   </div>
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-12">
-                  <label for="address"><span class="text-danger" style="margin-right: 5px;">*</span> Address: </label>
+                  <label for="username"><span class="text-danger">*</span> Address: </label>
                   <div class="input-group">
+                    <span class="input-group-text bi-house-fill"></span>
                     <input class="form-control" id="address" type="text" name="address" placeholder="Address" required="">
-                    <span class="input-group-btn">
-                      <label style="background-color:rgb(1, 1, 85);" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></label>
-                    </span>
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-12">
-                  <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Password: </label>
+                  <label for="password"><span class="text-danger">*</span> Password: </label>
                   <div class="input-group">
+                    <span class="input-group-text bi-lock-fill"></span>
                     <input class="form-control" id="password" type="password" name="password" placeholder="Password" required="">
-                    <span class="input-group-btn">
-                      <label style="background-color:rgb(1, 1, 85);" class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
-                    </span>
-
                   </div>
                 </div>
               </div>
 
+              <!-- TODO: error message here
+              <label class="text-danger mb-3"><span> <?php //echo $error;  ?> </span></label> -->
 
-
-              <div class="row">
+              <div class="row mb-3">
                 <div class="form-group col-xs-4">
-                  <button class="btn btn-primary" type="submit">Submit</button>
+                  <button class="btn btn-primary" name="submit" type="submit" value="Login">Submit</button>
                 </div>
-
               </div>
-              <label style="margin-left: 5px;">or</label> <br>
-              <label style="margin-left: 5px;"><a href="customerlogin.php">Have an account? Login.</a></label>
 
+              <label>or</label> <br>
+              <label><a href="customerlogin.php">Have an account? Login.</a></label>
             </form>
-
           </div>
-
         </div>
-
       </div>
     </div>
   </main>
