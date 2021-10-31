@@ -15,7 +15,7 @@ include("common/components.php");
   ?>
 
   <main>
-    <div class="container text-center">
+    <div class="container text-center py-5">
       <div class="row justify-content-center mb-4">
         <div class="col-md-8">
           <img src="images/bulldog.png" alt="logo" class="mb-3">

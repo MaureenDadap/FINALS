@@ -16,7 +16,7 @@
     <body class="login">
       <?= toTopBtn();
       navbar() ?>
-      <main>
+      <main class="py-5">
         <div class="container">
           <header class="text-center">
             <h1>Hi Manager</h1>

@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
   toTopBtn();
   navbar();
   ?>
-  <main>
+  <main class="py-5">
     <div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
