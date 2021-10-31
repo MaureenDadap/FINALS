@@ -38,7 +38,7 @@ function navbar()
         echo '
             </a></li>
             <li class="nav-item"><a href="myrestaurant.php" class="nav-link"><span class="fa fa-tools"></span> MANAGER CONTROL PANEL</a></li>
-            <li class="nav-item"><a href="logout_m.php" class="nav-link"><span class="bi-box-arrow-left"></span> Log Out </a></li>
+            <li class="nav-item"><a href="utils/logout_m.php" class="nav-link"><span class="bi-box-arrow-left"></span> Log Out </a></li>
           </ul>
           ';
     } else if (isset($_SESSION['login_user2'])) {
@@ -56,7 +56,7 @@ function navbar()
             echo "0";
         echo ')
             </a></li>
-        <li class="nav-item"><a href="logout_u.php" class="nav-link"><span class="bi-box-arrow-left"></span> Log Out </a></li>
+        <li class="nav-item"><a href="utils/logout_u.php" class="nav-link"><span class="bi-box-arrow-left"></span> Log Out </a></li>
     </ul>';
     } else {
         echo '

@@ -66,7 +66,7 @@
 
 <?php
 
-require 'connection.php';
+require 'utils/connection.php';
 $conn = Connect();
 
 $fullname = $conn->real_escape_string($_POST['fullname']);
