@@ -89,4 +89,25 @@ function navbar()
 
 function footer()
 {
+    include("website_info.php");
+    echo ' <footer>
+<div class="container py-4">
+  <div class="col-8 brand">
+    <a href="index.php" class="mx-auto">';
+    echo $website_name;
+
+    echo '</a><p>';
+    echo $website_name;
+    echo ' is an online cafeteria system for the students of NU Laguna.</p>
+  </div>
+</div>
+<div class="names py-2 text-center ">
+  <div class="container d-flex justify-content-between">
+    <span>Bowwi Katigbak</span>
+    <span>Maureen Kate Dadap</span>
+    <span>Reymar Bulanon</span>
+    <span>Zyrhus Joshua Tayag</span>
+  </div>
+</div>
+</footer>';
 }

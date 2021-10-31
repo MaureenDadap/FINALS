@@ -25,7 +25,7 @@ if (isset($_SESSION['login_user2'])) {
         <h1>Welcome to <span class="website_name"> <?= $website_name ?> </span></h1>
         <h4>Kindly log in to continue.</h4>
       </header>
-      
+
       <div class="col-md-5 mx-auto mt-5">
         <div class="card">
           <div class="card-header">Login</div>
