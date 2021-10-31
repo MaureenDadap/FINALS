@@ -1,3 +1,5 @@
+<!-- TODO: file not used, delete later -->
+
 <?php
 include("common/head_scripts.php");
 include("common/components.php");

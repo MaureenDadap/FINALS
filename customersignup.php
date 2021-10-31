@@ -2,6 +2,32 @@
 include("common/head_scripts.php");
 include("common/components.php");
 include("common/website_info.php");
+
+$error = "";
+$response = "";
+
+if (isset($_POST['submit'])) {
+  require 'utils/connection.php';
+  $conn = Connect();
+
+  $fullname = $conn->real_escape_string($_POST['fullname']);
+  $username = $conn->real_escape_string($_POST['username']);
+  $email = $conn->real_escape_string($_POST['email']);
+  $contact = $conn->real_escape_string($_POST['contact']);
+  $address = $conn->real_escape_string($_POST['address']);
+  $password = $conn->real_escape_string($_POST['password']);
+
+  $query = "INSERT into CUSTOMER(fullname,username,email,contact,address,password) VALUES('" . $fullname . "','" . $username . "','" . $email . "','" . $contact . "','" . $address . "','" . $password . "')";
+  $success = $conn->query($query);
+
+  if (!$success) {
+    die("Couldnt enter data: " . $conn->error);
+  } else {
+    $response = "success";
+  }
+
+  $conn->close();
+}
 ?>
 
 <html>
@@ -13,6 +39,22 @@ include("common/website_info.php");
   navbar()
   ?>
   <main>
+    <div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-success">Success</h5>
+          </div>
+          <div class="modal-body">
+            <p>Your account has been created. Welcome <?php echo $fullname ?>!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><a href="customerlogin.php">Proceed to Login</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <header class="text-center">
         <h1>Hi Guest</h1>
@@ -25,7 +67,7 @@ include("common/website_info.php");
           <div class="card-header">Create Account</div>
 
           <div class="card-body">
-            <form role="form" action="customer_registered_success.php" method="POST">
+            <form role="form" action="" method="POST">
               <div class="row mb-3">
                 <div class="form-group col-xs-12">
                   <label for="username"><span class="text-danger">*</span> Full Name: </label>
@@ -90,8 +132,7 @@ include("common/website_info.php");
                 </div>
               </div>
 
-              <!-- TODO: error message here
-              <label class="text-danger mb-3"><span> <?php //echo $error;  ?> </span></label> -->
+              <label class="text-danger mb-3"><span> <?php echo $error; ?> </span></label>
 
               <div class="row mb-3">
                 <div class="form-group col-xs-4">
@@ -111,6 +152,13 @@ include("common/website_info.php");
   footer();
   scripts();
   ?>
+  <script>
+    var response = "<?php echo $response ?>";
+    var successModal = new bootstrap.Modal(document.getElementById('successModal'))
+    if (response == "success") {
+      successModal.toggle();
+    }
+  </script>
 </body>
 
 </html>
