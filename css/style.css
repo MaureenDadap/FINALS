@@ -33,7 +33,7 @@ main {
   color: white;
 }
 
-#myBtn>i {
+#myBtn > i {
   color: rgb(49, 42, 42);
 }
 
@@ -93,7 +93,8 @@ body.signup {
   background-attachment: fixed;
 }
 
-.login header, .signup header {
+.login header,
+.signup header {
   color: #fff;
 }
 
@@ -111,6 +112,34 @@ body.signup {
 /*--------------------------------------------------------------
 # INDEX
 --------------------------------------------------------------*/
+body.landing {
+  background: linear-gradient(90deg, rgba(8, 37, 56, 0.6), rgba(5, 60, 61, 0.6)),
+    url("../images/table_food.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.landing > main img {
+  height: 10rem;
+}
+
+.landing > main h1 {
+  font-weight: 700;
+}
+
+.landing > main .btn {
+  background-color: gold;
+  border: none;
+  color: rgb(71, 43, 23);
+}
+
+.landing > main .btn:hover {
+  background-color: rgb(197, 170, 13);
+}
 
 /*--------------------------------------------------------------
 # FOOTER
