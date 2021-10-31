@@ -7,6 +7,14 @@
 /*--------------------------------------------------------------
 # COMMMON
 --------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
 
 body {
   display: flex;
@@ -15,8 +23,7 @@ body {
 }
 
 main {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  margin-top: 76px;
 }
 
 #myBtn {
@@ -52,6 +59,7 @@ main {
   transition: background-color 200ms linear;
   background-color: var(--main-blue);
   box-shadow: 0px 6px 11px 0px rgba(0, 2, 136, 0.178);
+  max-height: 76px;
   width: 100%;
   font-family: "Poppins", sans-serif;
 }
@@ -115,7 +123,7 @@ body.signup {
   color: gold;
 }
 
-.signup .modal .btn a{
+.signup .modal .btn a {
   text-decoration: none;
   color: #fff !important;
 }
@@ -138,10 +146,6 @@ body.landing {
   height: 10rem;
 }
 
-.landing > main h1 {
-  font-weight: 700;
-}
-
 .landing > main .btn {
   background-color: gold;
   border: none;
@@ -150,6 +154,66 @@ body.landing {
 
 .landing > main .btn:hover {
   background-color: rgb(197, 170, 13);
+}
+
+/*--------------------------------------------------------------
+# FOOD ZONE
+--------------------------------------------------------------*/
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-container > .header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+.carousel-container > .header h1 {
+  text-align: center;
+}
+
+.carousel-container > .header p {
+  text-align: center;
+}
+
+.carousel-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.menu-heading h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.menu-heading h6 {
+  color: rgb(255, 187, 0);
+  font-weight: 700;
+}
+
+.btn.day {
+  border: none;
+  border-radius: 30px;
+}
+
+.btn.day:hover {
+  background-color: rgb(255, 187, 0);
+}
+
+.btn.day:active {
+  background-color: rgb(241, 241, 255);
 }
 
 /*--------------------------------------------------------------
