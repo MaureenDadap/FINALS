@@ -90,7 +90,7 @@ function navbar()
 function footer()
 {
     include("website_info.php");
-    echo ' <footer>
+    echo ' <footer class="footer mt-auto">
 <div class="container py-4">
   <div class="col-8 brand">
     <a href="index.php" class="mx-auto">';

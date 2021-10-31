@@ -1,5 +1,9 @@
-<html>
+<?php
+include("common/head_scripts.php");
+include("common/components.php");
+?>
 
+<html>
   <head>
     <title> Manager Login | Le Comscie'' </title>
   </head>

@@ -8,6 +8,12 @@
 # COMMMON
 --------------------------------------------------------------*/
 
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 main {
   padding-top: 150px;
   padding-bottom: 150px;
@@ -107,6 +113,11 @@ body.signup {
 .login header .website_name,
 .signup header .website_name {
   color: gold;
+}
+
+.signup .modal .btn a{
+  text-decoration: none;
+  color: #fff !important;
 }
 
 /*--------------------------------------------------------------
