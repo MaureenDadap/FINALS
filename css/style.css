@@ -1,0 +1,12 @@
+.navbar-brand {
+    color: gold !important;
+}
+
+.navbar-inverse {
+    background-color:rgb(1, 1, 85) !important;
+    border: none !important;
+}
+
+.navbar-inverse .active a {
+    background-color: rgb(13, 13, 54) !important;
+}
