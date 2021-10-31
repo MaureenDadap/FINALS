@@ -8,6 +8,10 @@
 # COMMMON
 --------------------------------------------------------------*/
 
+main {
+    padding-top: 150px;
+}
+
 #myBtn {
   display: none;
   position: fixed;

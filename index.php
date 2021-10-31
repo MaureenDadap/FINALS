@@ -1,17 +1,18 @@
 <?php
 session_start();
-include("common/head_content.php");
-include("common/navbar.php");
+include("common/head_scripts.php");
+include("common/components.php");
 ?>
 
 <html>
-<?= head("Home | Le Comscie'"); ?>
+<?= head("Home"); ?>
 
-<body style="background-image: url('images/Logo.jpg');background-size:cover;">
-  <button onclick="topFunction()" id="myBtn" title="Go to top">
-    <i class="bi-chevron-up"></i>
-  </button>
-  <?= navbar() ?>
+<body>
+  <?= 
+  toTopBtn();
+  navbar() 
+  ?>
+  
   <main>
     <div>
       <div style="position:relative;text-align:center">
@@ -35,18 +36,10 @@ include("common/navbar.php");
     </div>
   </main>
 
-  <footer>
-    <center>
-      <p style="color:gray;">Bulanon, Katigbak Inc.</p>
-    </center>
-    <center>
-      <p style="color:gray;">BSCS-191A</p>
-    </center>
-  </footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="js/script.js"></script>
+  <?=
+  footer();
+  scripts();
+  ?>
 </body>
 
 </html>
