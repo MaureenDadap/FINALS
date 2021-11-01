@@ -22,20 +22,10 @@ if (!isset($login_session)) {
     <div class="container">
       <div class="row">
         <div class="col-md-4 text-center">
-          <div class="text-start">
-            <h1>Hello Manager! </h1>
-            <p>Manage all your restaurant from here</p>
-          </div>
-          <div class="list-group">
-            <a href="myrestaurant.php" class="list-group-item active">My Restaurant</a>
-            <a href="view_food_items.php" class="list-group-item ">View Food Items</a>
-            <a href="add_food_items.php" class="list-group-item ">Add Food Items</a>
-            <a href="edit_food_items.php" class="list-group-item ">Edit Food Items</a>
-            <a href="delete_food_items.php" class="list-group-item ">Delete Food Items</a>
-          </div>
+          <?= adminSideBar("restaurant"); ?>
         </div>
         <div class="col-md-8">
-          <div class="form-area px-lg-5 mx-lg-5" >
+          <div class="form-area px-lg-5 mx-lg-5">
             <form action="myrestaurant1.php" method="POST">
               <br style="clear: both">
               <h3 class="text-center mb-4">MY RESTAURANT</h3>
@@ -65,7 +55,7 @@ if (!isset($login_session)) {
       </div>
     </div>
   </main>
-  
+
   <?= footer();
   scripts(); ?>
 </body>
