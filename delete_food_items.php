@@ -18,7 +18,7 @@ if (!isset($login_session)) {
   <main class="py-5">
     <div class="container">
       <div class="row">
-      <div class="col-md-4 text-center admin-side-bar">
+        <div class="col-md-4 text-center admin-side-bar">
           <?= adminSideBar("delete"); ?>
         </div>
         <div class="col-md-8">

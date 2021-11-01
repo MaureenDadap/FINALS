@@ -64,50 +64,50 @@ if (!isset($login_session)) {
 
             ?>
           </div>
-        </div>
-        
-        <div class="col-md-8">
-        <div class="form-area px-lg-5 mx-lg-5">
-            <form action="edit_food_items.php" method="GET">
-              <br style="clear: both">
-              <h3 class="text-center mb-4"> EDIT YOUR FOOD ITEMS HERE </h3>
-
-              <div class="form-group mb-3">
-                <input class='input' type='hidden' name="dfid" value=<?php echo $row1['F_ID'];  ?> />
-              </div>
-
-              <div class="form-group mb-3">
-                <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Name: </label>
-                <input type="text" class="form-control" id="dname" name="dname" value=<?php echo $row1['name'];  ?> placeholder="Your Food name" required="">
-              </div>
-
-              <div class="form-group mb-3">
-                <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Price: </label>
-                <input type="text" class="form-control" id="dprice" name="dprice" value=<?php echo $row1['price'];  ?> placeholder="Your Food Price (INR)" required="">
-              </div>
-
-              <div class="form-group mb-3">
-                <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Description: </label>
-                <input type="text" class="form-control" id="ddescription" name="ddescription" value=<?php echo $row1['description'];  ?> placeholder="Your Food Description" required="">
-              </div>
-
-              <div class="form-group mb-3">
-                <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right" onclick="display_alert()" value="Display alert box"> Update </button>
-              </div>
-            </form>
 
 
-        <?php
+          <div class="row">
+            <div class="form-area px-lg-5 mx-lg-5">
+              <form action="edit_food_items.php" method="GET">
+                <br style="clear: both">
+                <h3 class="text-center mb-4"> EDIT YOUR FOOD ITEMS HERE </h3>
+
+                <div class="form-group mb-3">
+                  <input class='input' type='hidden' name="dfid" value=<?php echo $row1['F_ID'];  ?> />
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Name: </label>
+                  <input type="text" class="form-control" id="dname" name="dname" value=<?php echo $row1['name'];  ?> placeholder="Your Food name" required="">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Price: </label>
+                  <input type="text" class="form-control" id="dprice" name="dprice" value=<?php echo $row1['price'];  ?> placeholder="Your Food Price (INR)" required="">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Description: </label>
+                  <input type="text" class="form-control" id="ddescription" name="ddescription" value=<?php echo $row1['description'];  ?> placeholder="Your Food Description" required="">
+                </div>
+
+                <div class="form-group mb-3">
+                  <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right" onclick="display_alert()" value="Display alert box"> Update </button>
+                </div>
+              </form>
+
+
+          <?php
               }
             }
-        ?>
+          ?>
+            </div>
           </div>
+          <?php
+          mysqli_close($conn);
+          ?>
         </div>
-        <?php
-        mysqli_close($conn);
-        ?>
       </div>
-    </div>
   </main>
   <?= footer();
   scripts(); ?>

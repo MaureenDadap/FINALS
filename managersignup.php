@@ -161,7 +161,7 @@ if (isset($_POST['submit'])) {
     var response = "<?php echo $response ?>";
     var successModal = new bootstrap.Modal(document.getElementById('successModal'))
     if (response == "success") {
-      successModal.toggle();
+      successModal.show();
     }
   </script>
 

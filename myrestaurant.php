@@ -3,11 +3,32 @@ include('utils/session_m.php');
 include("common/head_scripts.php");
 include("common/components.php");
 
+$error = "";
+$response = "";
+
 
 if (!isset($login_session)) {
   header('Location: managerlogin.php'); // Redirecting To Home Page
 }
 
+$error = "";
+$response = "";
+
+if (isset($_POST['submit'])) {
+  $name = $conn->real_escape_string($_POST['name']);
+  $email = $conn->real_escape_string($_POST['email']);
+  $contact = $conn->real_escape_string($_POST['contact']);
+  $address = $conn->real_escape_string($_POST['address']);
+
+  $query = "INSERT INTO RESTAURANTS(name,email,contact,address,M_ID) VALUES('" . $name . "','" . $email . "','" . $contact . "','" . $address . "','" . $_SESSION['login_user1'] . "')";
+  $success = $conn->query($query);
+
+  if (!$success) {
+    $error = ("Couldnt enter data: " . $conn->error);
+  } else {
+    $response = "success";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +40,22 @@ if (!isset($login_session)) {
   navbar();
   ?>
   <main class="py-5">
+    <div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-success">Success</h5>
+          </div>
+          <div class="modal-body">
+            <p><?php echo $name ?> has been added.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><a href="myrestaurant.php">Okay</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="row">
         <div class="col-md-4 text-center">
@@ -26,7 +63,7 @@ if (!isset($login_session)) {
         </div>
         <div class="col-md-8">
           <div class="form-area px-lg-5 mx-lg-5">
-            <form action="myrestaurant1.php" method="POST">
+            <form action="" method="POST">
               <br style="clear: both">
               <h3 class="text-center mb-4">MY RESTAURANT</h3>
 
@@ -58,6 +95,14 @@ if (!isset($login_session)) {
 
   <?= footer();
   scripts(); ?>
+
+  <script>
+    var response = "<?php echo $response ?>";
+    var successModal = new bootstrap.Modal(document.getElementById('successModal'))
+    if (response == "success") {
+      successModal.show();
+    }
+  </script>
 </body>
 
 </html>
